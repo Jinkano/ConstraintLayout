@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         spnLayouts.setEnabled(false);
 
         /*
-        * MÉTODO setOnCheckedChangeListener DEL SWITCH swVerLayouts
-        * ---------------------------------------------------------
+        * TODO : MÉTODO setOnCheckedChangeListener DEL SWITCH swVerLayouts
+        * ----------------------------------------------------------------
         * +) USAMOS IF PARA COMPROBAR SI EL SWITCH ESTA ACTIVADO/DESACTIVADO:
         *   +) SI ESTÁ ACTIVADO:
         *       -) MOSTRAMOS UN TOAST Y ACTIVAMOS EL SPINNER.
@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
+        * TODO : ARRAYADAPTER
         * -) LLENAMOS EL SPINNER CON LA LISTA CREADA EN EL ARCHIVO XML USANDO ARRAYADAPTER.
         * -) LE DAMOS FORMATO CON EL SPINNER PERSONALIZADO.
         * */
@@ -110,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
         spnLayouts.setAdapter(adapter);
 
         /*
-        * METODO setOnItemSelectedListener SPINNER spnLayouts
-        * ---------------------------------------------------
-        * + USAMOS SWITCH PARA LANZAR UNA ACTIVIDAD SEGÚN EL ITEM SELECCIONADO DEL SPINNER
+        * TODO : METODO setOnItemSelectedListener SPINNER spnLayouts
+        * ----------------------------------------------------------
+        * + SWITCH: PARA LANZAR UNA ACTIVIDAD SEGÚN EL ITEM SELECCIONADO DEL SPINNER
         *   + CASE:
         *       - LANZAMOS LA OTRA ACTIVIDAD CON EL INTENT.
         *       - MOSTRAMOS UN TOAST.
@@ -163,12 +164,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * MÉTODO setOnClickListener DEL RADIOBUTTON rbReloj
-        * -------------------------------------------------
+        * TODO : MÉTODO setOnClickListener DEL RADIOBUTTON rbReloj
+        * --------------------------------------------------------
         * - LLAMAMOS AL MÉTODO pvHora.
         * - DESMARCAMOS EL CHECKBOX cbHora.
         * - MOSTRAMOS UN TOAST.
-        * + IF: COMPROBAMOS SI RADIOBUTTON rbCalendario ESTA MARCADO:
+        * + IF: COMPROBAMOS SI RADIOBUTTON rbCalendario ESTA MARCADO.
         *   - DESMARCAMOS EL RADIOBUTTON rbCalendario.
         */
         rbReloj.setOnClickListener(new View.OnClickListener() {
@@ -182,13 +183,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * MÉTODO setOnClickListener DEL RADIOBUTTON rbCalendario
-        * ------------------------------------------------------
+        * TODO : MÉTODO setOnClickListener DEL RADIOBUTTON rbCalendario
+        * -------------------------------------------------------------
         * - LLAMAMOS AL MÉTODO pvFecha.
         * - DESMARCAMOS EL CHECKBOX cbFecha.
         * - MOSTRAMOS UN TOAST.
         * + IF: COMPROBAMOS SI RADIOBUTTON rbReloj ESTA MARCADO:
-        *   - DESMARCAMOS EL RADIOBUTTON rbReloj.
+        *       - DESMARCAMOS EL RADIOBUTTON rbReloj.
         * */
         rbCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,43 +202,58 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * MÉTODO
-        * --------
+        * TODO : MÉTODO setOnClickListener DEL IMAGEBUTTON ibReloj
+        * --------------------------------------------------------
+        * - LLAMAMOS AL MÉTODO DEL PICKER pvHora.
+        * + IF: COMPROBAMOS SI EL RADIOBUTTON rbReloj ESTÁ MARCADO.
+        *       - DESMARCAMOS RADIOBUTTON rbReloj.
+        * + IF: COMPROBAMOS SI CHECKBOX cbHora ESTÁ MARCADO.
+        *       - DESMARCAMOS CHECKBOX cbHora.
+        * - MOSTRAMOS UN TOAST.
         * */
         ibReloj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //llamar al picker
                 pvHora();
-                //desmarcar el radiogroup rgPickers.clearCheck();
                 if (rbReloj.isChecked()){rbReloj.setChecked(false);}
-                //desmarcar los check
                 if (cbHora.isChecked()){cbHora.setChecked(false);}
                 Toast.makeText(MainActivity.this, "Reloj : ImageButton" ,Toast.LENGTH_SHORT).show();
             }
         });
 
         /*
-        * MÉTODO
-        * ------
+        * TODO : MÉTODO setOnClickListener DEL IMAGEBUTTON ibCalendario
+        * -------------------------------------------------------------
+        * - LLAMAMOS AL MÉTODO DEL PICKER pvFecha.
+        * + IF: COMPROBAMOS SI EL RADIOBUTTON rbCalendario ESTÁ MARCADO.
+        *       - DESMARCAMOS RADIOBUTTON rbCalendario.
+        * + IF: COMPROBAMOS SI CHECKBOX cbFecha ESTÁ MARCADO.
+        *       - DESMARCAMOS CHECKBOX cbFecha.
+        * - MOSTRAMOS UN TOAST.
         * */
         ibCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //llamar al picker
                 pvFecha();
-                //desmarcar el radiogroupb rgPickers.clearCheck();
                 if (rbCalendario.isChecked()){rbCalendario.setChecked(false);}
-                //desmarcar los check
                 if (cbFecha.isChecked()){cbFecha.setChecked(false);}
                 Toast.makeText(MainActivity.this, "Calendario : ImageButton" ,Toast.LENGTH_SHORT).show();
             }
         });
 
         /*
-        * MÉTODO setOnCheckedChangeListener DEL CHECKBOX cbHora
-        * -----------------------------------------------------
-        * +
+        * TODO : MÉTODO setOnCheckedChangeListener DEL CHECKBOX cbHora
+        * ------------------------------------------------------------
+        * + IF: COMPROBAMOS SI cbHora ESTÁ MARCADO Y LA VARIABLE strHora ESTA VACIA.
+        *       - MOSTRAMOS UN TEXTO EN EL TEXTVIEW tvHora.
+        *       - DESMARCAMOS cbHora.
+        * + ELSE:
+        *       + IF: SI ESTÁ MARCADO
+        *           - MOSTRAMOS LA HORA EN EL tvHora.
+        *           - MOSTRAMOS UN TOAST.
+        *       + ELSE:
+        *           - BORRAMOS LA HORA MOSTRADA EN EL tvHora.
+        *           - MOSTRAMOS UN TOAST.
         * */
         cbHora.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -258,9 +274,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * MÉTODO setOnCheckedChangeListener DEL CHECKBOX cbFecha
-        * ------------------------------------------------------
-        * +
+        * TODO : MÉTODO setOnCheckedChangeListener DEL CHECKBOX cbFecha
+        * -------------------------------------------------------------
+        * + IF: COMPROBAMOS SI cbFecha ESTÁ MARCADO Y LA VARIABLE strFecha ESTA VACIA.
+        *       - MOSTRAMOS UN TEXTO EN EL TEXTVIEW tvFecha.
+        *       - DESMARCAMOS cbFecha.
+        * + ELSE:
+        *       + IF: SI ESTÁ MARCADO
+        *           - MOSTRAMOS LA FECHA EN EL tvFecha.
+        *           - MOSTRAMOS UN TOAST.
+        *       + ELSE:
+        *           - BORRAMOS LA FECHA MOSTRADA EN EL tvFecha.
+        *           - MOSTRAMOS UN TOAST.
         * */
         cbFecha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -281,21 +306,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /*
-        * MÉTODO setOnClickListener DEL BUTTON btnInfo
-        * --------------------------------------------
-        * - MOSTRAMOS INFORMACIÓN ACERCA DEL APP.
+        * TODO : MÉTODO setOnClickListener DEL BUTTON btnInfo
+        * ---------------------------------------------------
+        * - LLAMAMOS AL MÉTODO pvAdInfo.
         * */
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Mostrar informacion", Toast.LENGTH_SHORT).show();
                 pvAdInfo();
             }
         });
 
         /*
-        * MÉTODO setOnClickListener DEL BUTTON btnSalir
-        * ---------------------------------------------
+        * TODO : MÉTODO setOnClickListener DEL BUTTON btnSalir
+        * ----------------------------------------------------
         * - CERRAMOS LA APP USANDO finish.
         * */
         btnSalir.setOnClickListener(new View.OnClickListener() {
@@ -308,33 +332,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    * TODO : ALERTDIALOG
-    * ------------------
+    * TODO : ALERTDIALOG pvAdInfo
+    * ---------------------------
+    * - CREAMOS UN OBJETO adbInfo DE LA CLASE ALERTDIALOG.
+    * - CREAMOS UN OBJETO layoutInflater DE LA CLASE LAYOUTINFLATER.
+    * - CREAMOS U  OBJETO DE LA CLASE VIEW Y LE PASAMOS EL LAYOUT activity_info.
+    * - LE DAMOS UN TÍTULO, LO CREAMOS Y LO MOSTRAMOS.
     * */
     public void pvAdInfo(){
         AlertDialog.Builder adbInfo = new AlertDialog.Builder(this);
         LayoutInflater layoutInflater = getLayoutInflater();
         @SuppressLint("InflateParams")
         View view = layoutInflater.inflate(R.layout.activity_info, null);
-        //TextView tvInfo = view.findViewById(R.id.idTvInfo);
         adbInfo.setView(view).setTitle("Info. App").create().show();
     }
 
 
-    // MÉTODO PARA LA FECHA
+    /*
+    * TODO : MÉTODO PARA LA FECHA
+    * ---------------------------
+    * + CREAMOS UN OBJETO DE LA CLASE DATEPICKERDIALOG:
+    *   - LE DAMOS FORMATO AL DÍA Y AL MES SI ES MENOR A 10.
+    *   - LE ASIGNAMOS LA FECHA SELECCIONADA A LA VARIABLE strFecha.
+    *   + CREAMOS UN OBJETO DE LA CLASE SIMPLEDATEFORMAT
+    *       - CREAMMOS UNA VARIABLE TIPO DATE Y LE ASIGNAMOS EL VALOR DE LA VARIABLE strFecha
+    *       - LE PASAMOS LA FECHA A CALENDAR.
+    *   - LE PASAMOS A LAS VARIABLES strDia Y strMes EL DÍA Y EL MES OBTENIDOS DE CALENDAR.
+    *   - CONCAQUETAMOS LA CADENA Y SE LO PASAMOS A LA VARIABLE strFecha.
+    * - MOSTRAMOS dpdFecha.
+    * */
     public void pvFecha(){
         DatePickerDialog dpdFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-                //Formato para el Dia/Mes si es menor a 10.
                 String strFormatoDia = (dayOfMonth < 10)? strCero + dayOfMonth: String.valueOf(dayOfMonth);
                 String strFormatoMes = (month + 1 < 10)? strCero + (month + 1): String.valueOf(month + 1);
-
-                //Mostramos la fecha con el formato
                 strFecha = (strFormatoDia + strBarra + strFormatoMes + strBarra + year);
-
-                ////
                 @SuppressLint("SimpleDateFormat")
                 SimpleDateFormat sdfFecha = new SimpleDateFormat("dd/MM/yyyy");
                 try {
@@ -347,24 +380,25 @@ public class MainActivity extends AppCompatActivity {
                 String strDia = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
                 String strMes = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
                 strFecha = strDia + ", " + dayOfMonth + " de " + strMes + " del " + year;
-                ////
             }
         },intAnio, intMes, intDia);
-
-        //Mostramos la Fecha
         dpdFecha.show();
     }
 
-    // MÉTODO PARA LA HORA
+    /*
+    * TODO : MÉTODO PARA LA HORA
+    * --------------------------
+    * + CREAMOS UN OBJETO DE LA CLASE TIMERPICKERDIALOG:
+    *   - LE DAMOS FORMATO ALA HORA Y A LOS MINUTOS SI ES MENOR A 10.
+    *   - CONCAQUETAMOS LA CADENA Y SE LO PASAMOS A LA VARIABLE strHora.
+    * - MOSTRAMOS tpdHora.
+    * */
     public void pvHora(){
         TimePickerDialog tpdHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
-                //Formato para el Minuto/Hora si es menor a 10.
                 String strFormatoMinuto = (minute < 10)? strCero + minute: String.valueOf(minute);
                 String strFormatoHora = (hourOfDay < 10)? strCero + (hourOfDay): String.valueOf(hourOfDay);
-
                 /*/Obtener valor AM/PM
                 String strAmPm;
                 if (hourOfDay < 12){
@@ -372,8 +406,6 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     strAmPm = "p.m.";
                 }*/
-
-                //Mostramos la hora con el formato
                 strHora = ("Son las " + strFormatoHora + " horas y " + strFormatoMinuto + " minutos");
             }
         },intHora, intMinuto, true);
