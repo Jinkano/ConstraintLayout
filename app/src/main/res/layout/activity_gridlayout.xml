@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:id="@+id/idGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:background="@color/colorFondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/idTvTexto1"
+            style="@style/formatoTextoTitulo.textViewPeru"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/idTvTexto2"
+            style="@style/formatoTextoTitulo.textViewEspana"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/idTvTexto3"
+            style="@style/formatoTextoTitulo.textViewPolonia"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="2"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:drawableStart="@android:drawable/btn_star_big_on"
+            android:text="@string/txt_estrella" />
+
+        <CheckBox
+            android:id="@+id/idCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:checked="true"
+            android:text="@string/txt_mostrar_reloj" />
+
+        <ToggleButton
+            android:id="@+id/idTbEstrella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:checked="true" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/idTvConcepto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_concepto"
+        android:textColor="@color/colorNegro"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idGridLayout" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTvConcepto">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/idTvGridLayout"
+                style="@style/anchoAlto.tvComentario"
+                android:text="@string/tvGridLayout" />
+        </GridLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@id/idBtnRegresar"
+        style="@style/anchoAlto.buttonRegresar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

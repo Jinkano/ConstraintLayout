@@ -1,0 +1,58 @@
+<resources>
+    // TÍTULOS DE LAS ACTIVIDADES
+    <string name="app_name">Ejercicio Constraint</string>
+    <string name="frame_name">Frame Layout</string>
+    <string name="linear_h_name">Linear Layout Horizontal</string>
+    <string name="linear_v_name">Linear Layout Vertical</string>
+    <string name="relative_name">Relative Layout</string>
+    <string name="grid_name">Grid Layout</string>
+    <string name="table_name">Table Layout</string>
+
+    // TEXTOS DEL ACTIVITY MAIN
+    <string name="txt_switch_spinner">Switch / Spinner</string>
+    <string name="txt_radio_image_pickers">RadioButton / ImageButton / Pickers</string>
+    <string name="txt_checkbox_textview">CheckBox / TextView</string>
+    <string name="txt_switch">¿Ver layouts típicas?</string>
+    <string name="txt_mostrar_reloj">Mostrar reloj</string>
+    <string name="txt_mostrar_calendario">Mostrar calendario</string>
+    <string name="id_hora_seleccionada">Hora seleccionada</string>
+    <string name="id_fecha_seleccionada">Fecha seleccionada</string>
+    <string name="txt_salir">Salir</string>
+    <string name="txt_00_00">00:00</string>
+    <string name="txt_05_11_1979">dd/mm/yyyy</string>
+    <string name="txt_no">NO</string>
+    <string name="txt_si">SI</string>
+    <string name="txt_estrella">Estrella</string>
+    <string name="txt_select_hora">Selecciona la hora.</string>
+    <string name="txt_select_fecha">Selecciona una fecha.</string>
+
+    // TEXTO PARA LOS TEXTVIEW
+    <string name="txt_Peru">Perú</string>
+    <string name="txt_Espana">España</string>
+    <string name="txt_Polonia">Polonia</string>
+    <string name="txt_concepto">Concepto :</string>
+
+    // TEXTO DE LOS BOTONES
+    <string name="txt_Regresar">Regresar</string>
+    <string name="txt_info">Info.</string>
+
+    // OPCIONES DE LA LISTA DEL SPINNER
+    <string-array name="lista_layout">
+        <item>Seleccione una opción…</item>
+        <item>Frame Layout</item>
+        <item>Linear Layout Horizontal</item>
+        <item>Linear Layout Vertical</item>
+        <item>Relative Layout</item>
+        <item>Grid Layout</item>
+        <item>Table Layout</item>
+    </string-array>
+
+    // TEXTO PARA LA DESCRIPCIÓN DE LAS OTRAS ACTIVIDADES
+    <string name="tvFrameLayout">FrameLayout es la vista más sencilla de todas, no permite ningún tipo de ajuste.\n\nColoca todos los elementos alineados en la esquina superior izquierda, por lo que, si disponemos de más de un elemento quedarán uno encima de otro.</string>
+    <string name="tvLinearHorizontal">LinearLayout es una vista que apila todos los campos de forma consecutiva (uno detrás de otro) empezando a dibujar el primero en su esquina superior izquierda.\n\nPropiedad “android:orientation” horizontal de izquierda a derecha.\n\nPodemos crear muchos diseños jugando con el volumen, orientación, gravedad, etc.</string>
+    <string name="tvLinearVertical">Apila todos los campos de forma consecutiva empezando en su esquina superior izquierda.\n\nPropiedad “android:orientation” vertical de arriba abajo.\n\nPodemos crear muchos diseños jugando con el volumen, orientación, gravedad, etc.</string>
+    <string name="tvRelativeLayout">Especifica la posición de cada una de las vistas hijas respecto al resto de los componentes (o vista contenedora).\n\nPodemos centra este componente en el layout o el componente A va a la izquierda de B y debajo de C.\n\nDefine atributos como: layout_toLeftOf (a la izquierda de) layout_toRightOf (a la derecha de) layout_below (debajo), layout_above (por encima), etc.\n\nPara referenciar a otra View usaremos su id.</string>
+    <string name="tvGridLayout">Alinea sus elementos en una cuadrícula.\n\nPermite anidar LinearLayouts. Se basa en un sistema de índices empezando en 0.\n\nAtributos: columnCount, rowCount, useDefaultMargins establece márgenes predeterminadas entre los ítems.</string>
+    <string name="tvTableLayout">Agrupa elementos en filas y columnas.\n\nContiene un conjunto de elementos de tipo TableRow que agrupa componentes visuales por cada fila (cada fila puede tener distinta cantidad de componentes visuales).</string>
+    <string name="tv_info">En este ejercicio hemos utilizado los Layouts, FrameLayout, GridLayout, LinearLayout, RelativeLayout, TableLayout y ConstraintLayout.\n\nTambién hemos utilizado objetos View y ViewGroup como TextView, Switch, Spinner, RadioButton, ImageButton, CheckBox, Button, Guideline, ScrollView, CardView.\n\nToast para mostrar mensajes y DatePickerDialog, TimePickerDialog para visualizar el calendario y el reloj respectivamente.</string>
+</resources>
